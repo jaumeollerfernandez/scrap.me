@@ -1,0 +1,93 @@
+a { color:#333333; }
+a:hover { color:#009e4b; }
+body {
+  color:#333333;
+  font-size:14px;
+  font-family:"Poppins";
+  font-weight:400;
+}
+button, button:focus, button:active, .button, #scroll-to-top, .minicart-wrapper .action.showcart.primary, .minicart-wrapper_dropdown .action.showcart.primary, .header_main-top .button:not(.outline) {
+  background-color:#333333;
+  color:#ffffff;
+  border-color:rgba(0,0,0,0);
+}
+.minicart-wrapper .action.showcart.primary a, .minicart-wrapper .action.showcart.primary span, .page-header .minicart-wrapper .action.showcart.primary .price, .page-header .minicart-wrapper_dropdown .action.showcart.primary .price { color:#ffffff; }
+.minicart-wrapper .action.showcart.primary a.icon i, .minicart-wrapper .action.showcart.primary a.icon i:before { border-color:#ffffff; }
+button:hover, .button:hover {
+  background-color:#009e4b;
+  color:#ffffff;
+  border-color:rgba(0,0,0,0);
+}
+.btn {
+  background-color:#333333 !important;
+  color:#ffffff !important;
+  border-color:rgba(0,0,0,0) !important;
+}
+.btn:hover {
+  background-color:#009e4b !important;
+  color:#ffffff !important;
+  border-color:rgba(0,0,0,0) !important;
+}
+.action.primary {
+  background-color:#333333;
+  color:#ffffff;
+  border-color:rgba(0,0,0,0);
+}
+.action.primary:hover {
+  background-color:#009e4b;
+  color:#ffffff;
+  border-color:rgba(0,0,0,0);
+}
+.block-search .block-content .form.minisearch .action.search {
+  background-color:#333333;
+  color:#ffffff;
+}
+.block-search .block-content .form.minisearch .action.search:hover {
+  background-color:#009e4b;
+  color:#ffffff;
+}
+.page-wrapper .minicart-wrapper .action.showcart .counter.qty .counter-number, .header-wishlist span.counter-number, .header-compare span.counter-number, .minicart-wrapper span.counter-number { background-color:#009e4b; }
+.price-box .price, .clever-countdown-label span { color:#333333; }
+#move_gdpr_cookie_modal, .main-modal-content a { color:#009e4b; }
+.rating-summary .rating-result > span:before, .review-control-vote label:before { color:#f9bf3b; }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { color:#000000; }
+.zoo-menu-label { color:#333333; }
+@media only screen and (max-width: 767px) {
+}
+.top-menu { color:#333333; }
+.clever-menu a { color:#333333; }
+@media (min-width: 768px) {
+  .clever-menu ul.clever-mega-menu > li.level-top > a, .clever-horizontal-menu .clever-mega-menu li.level0 > a.menu-link { color:#333333; }
+}
+.clever-menu ul.clever-mega-menu > li.level-top > a, .clever-horizontal-menu .clever-mega-menu li.level0 > a.menu-link {
+  font-size:13px;
+  text-transform:uppercase;
+}
+.clever-menu ul.clever-mega-menu > li.level-top > a:hover, .clever-menu ul.clever-mega-menu > li.level-top > a:hover span, .clever-horizontal-menu .clever-mega-menu li.level0 > a.menu-link:hover, .clever-horizontal-menu .clever-mega-menu li.level0 > a.menu-link:hover span, .clever-menu ul.clever-mega-menu > li.level0.active > a, .clever-menu ul.clever-mega-menu > li.level0.active > a span, .clever-horizontal-menu .clever-mega-menu li.level0.active> a.menu-link, .clever-horizontal-menu .clever-mega-menu li.level0.active> a.menu-link span { color:#009e4b; }
+.page-wrapper .nav-sections { background-color:#ffffff; }
+#zoo-sticky-header .zoo-header-user a { color:#333333; }
+.pages .items .item.current a.page, .pages .items .item:hover a.page, .pages .items .item.current strong.page, .pages .items .item:hover strong.page, .pages .items .item.current .action, .pages .items .item:hover .action, .pages .items .action.next:hover:before, .pages .items .action.previous:hover:before, .product-item-actions .actions-primary button.action.primary, .product-items .product-item-info .price-box .special-price .price, .products-grid.grid .product-item-info a.product-item-link:hover, #checkout .authentication-wrapper > button span, .cart-empty a, .page-wrapper .minicart-wrapper .action.showcart .counter.qty:hover, .modes .modes-mode.active:before, .zoo-breadcrumbs .items .item a:hover, .filter.block .filter-content .item.checkbox-filter span.check.checked, .products-list.list .product-item .category-price-list .zoo-quickview:hover, .products-list.list .product-item .category-price-list .zoo-wishlist-list:hover, .products-list.list .product-item .category-price-list .zoo-compare-list:hover, .clever-horizontal-menu .clever-mega-menu li a:hover, .nav-sections .header.links a:hover, .clever-horizontal-menu .clever-mega-menu-item:hover > .dropdown-toggle, .block-dashboard-orders .block-content a, .block-dashboard-info .block-content a, .block-dashboard-addresses .block-content a, .orders-history a, .owl-carousel .owl-nav .owl-prev:hover, .owl-carousel .owl-nav .owl-next:hover, .login-container .forgot-pass, #zoo-login-form .forgot-pass, .password.forget .forgot-pass, .form-create-account .forgot-pass, .product-options-bottom .price-box .price-container .price, .product-info-price .price-box .price-container .price, .page-header .minicart-wrapper .action.showcart .price, .zoo-service-category .zoo-bar-content span, .page-header .header-panel .header-top-link span { color:#009e4b; }
+.home07-block-help-shopping, .main-slide-07 .zoo-caption-slide .btn-groups .button.btn-2, .modes .mode-list.active .togglelines, .modes .mode-list.active .togglelines:before, .modes .mode-list.active .togglelines:after, body.cms-index-index .item-images-block__content:hover, .countdown-deal__times { background-color:#009e4b; }
+.zoo-navigation-vertical .block-title, .loading-bar, .minicart-wrapper .actions #top-cart-btn-checkout, .fieldset .actions .action.tocart, .cart-container .cart-summary .checkout-methods-items .primary.checkout, .available-sold { background:#333333; }
+.zoo-navigation-vertical .block-title i, .zoo-navigation-vertical .block-title h4, .minicart-wrapper .actions #top-cart-btn-checkout span { color:#ffffff; }
+.zoo-navigation-vertical .clever-menu { color:#333333; }
+.owl-carousel .owl-dots .owl-dot.active, .newsletters-style-2 .clever-icon-mail-1:before, .ui-slider-range, .ui-widget.ui-widget-content.ui-slider-horizontal .ui-slider-handle:hover, .modes .mode-list .togglelines
+#nprogress .bar, body .fancybox-close:hover { background:#009e4b; }
+.checkbox-filter .checkbox-material .check.checked, .ui-widget.ui-widget-content.ui-slider-horizontal .ui-slider-handle, .modes .modes-mode.active.grid-icon--line2 > .layer > div, .zoo-title-style6 .zoo-main-heading:after { border-color:#009e4b; }
+#checkout .checkout-payment-method .opc-payment-additional.discount-code .payment-option-content .form-discount .payment-option-inner+.actions-toolbar button:hover {
+  border-color:#009e4b !important;
+  background-color:#009e4b !important;
+}
+.page-wrapper .page-header .my-wishlist:hover * { color:#009e4b !important; }
+.page-wrapper .search-mini-block .block-search .form.minisearch .control .search-dropdown .search-select i, .catalog-product-view .product-social-links .action:hover, .catalog-product-view .product-addto-links .action:hover span, .product-add-form .product-options-bottom .product-addto-links .action span.cs-font, .nav-title-cart .box-price .price { color:#009e4b; }
+.nav-open .page-wrapper .nav-sections { background-color:#ffffff; }
+body { background-color:#ffffff; }
+.container {
+  padding-left:15px;
+  padding-right:15px;
+}
+.cms-index-index #zoo-main-content { background-color:#ffffff; }
+.product-view-bg:before {
+  background:#ffffff;
+  border-top:1px solid #ffffff;
+}

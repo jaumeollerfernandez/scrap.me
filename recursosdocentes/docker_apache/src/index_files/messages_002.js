@@ -1,0 +1,2 @@
+define(['jquery','uiComponent','Magento_Customer/js/customer-data','underscore','jquery/jquery-storageapi'],function($,Component,customerData,_){'use strict';return Component.extend({defaults:{cookieMessages:[],messages:[]},initialize:function(){this._super();this.cookieMessages=_.unique($.cookieStorage.get('mage-messages'),'text');this.messages=customerData.get('messages').extend({disposableCustomerData:'messages'});if(!_.isEmpty(this.messages().messages)){customerData.set('messages',{});}
+$.cookieStorage.set('mage-messages','');}});});

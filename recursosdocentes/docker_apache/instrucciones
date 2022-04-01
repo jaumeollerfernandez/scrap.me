@@ -1,0 +1,19 @@
+#1. Dentro del path del fichero contenedor
+#2. ejecutar el build, creara la imagen apache_scrap
+#docker build -t apache_scrap .
+#3. Lanzar el contenedor con nombre cont_apache_scrap
+#docker run -d --name cont_apache_scrap -v "/c/Users/miguel/Desktop/temporales borrar/docker_apache/src:/var/www/html" -p 81:80/tcp apache_scrap
+
+#en la carpeta src se puede ir editando mientras el contenedor está funcionando. 
+#Agregar nuevos documentos o editar los ficheros existenes.
+
+
+#ACCEDER AL SERVIDOR CON:
+# IP:81
+# http://localhost:81/fichero
+# http://127.0.0.1:81/fichero
+# http://IP_EQUIPO:81/fichero
+
+#FICHEROS INICIALES 
+#index.php - tabla con casos de prueba de precios. Modificar el php para actualizar casos.
+#index_.php - web comercial con el precio variante en cada acceso

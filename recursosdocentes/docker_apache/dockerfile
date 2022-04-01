@@ -1,0 +1,7 @@
+#docker build -t apache_scrap .
+#docker run -d --name cont_apache_scrap -v "/c/Users/miguel/Desktop/temporales borrar/docker_apache/src:/var/www/html" -p 81:80 apache_scrap
+FROM php:8.0-apache
+WORKDIR /var/www/html
+
+VOLUME src/ /var/www/html
+EXPOSE 80

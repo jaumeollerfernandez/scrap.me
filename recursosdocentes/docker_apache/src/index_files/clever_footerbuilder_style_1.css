@@ -1,0 +1,5 @@
+@media (min-width: 992px) {
+  .page-wrapper .page-footer ul.zoo-footer-social-links li a { font-size:30px; }
+}
+@media (max-width: 991px) {
+}
