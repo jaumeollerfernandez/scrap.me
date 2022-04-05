@@ -22,7 +22,9 @@ with open("home.html", "r") as html_file:
 
     #Aquí podemos encontrar los precios del tag.
     course_cards = soup.find_all("div",class_="caption")
-    for course in course_cards:
-        course_name = course.p.text
-        course_price = course.h4.text
-        print(course_name, course_price)
+    # for course in course_cards:
+    #     course_name = course.p.text
+    #     course_price = course.h4.text
+    #     print(course_name, course_price)
+    print(soup)
+
