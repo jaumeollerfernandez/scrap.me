@@ -32,16 +32,28 @@ def tipo(url):
     cont = 0
     while leer != "":
         nombre = []
-        while leer != ";":
+        while leer != ";" and cont == 0:
+            leer = db.read(1)
+            nombre.append(leer)
+        cont+=1
+        leer = "a"
+        while leer != ";" and cont == 1:
+            leer = db.read(1)
+            nombre.append(leer)
+        leer = "a"
+        cont+=1
+        while leer != ";" and cont == 2:
             leer = db.read(1)
             nombre.append(leer)
         
+        cont = 0
         resultado.append(nombre)
-        
-        
-        
-
+    
     db.close()
+    return resultado
+        
+        
+        
 
 print(tipo("https://www.elcorteingles.es/electronica/ordenadores/"))
     
