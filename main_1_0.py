@@ -1,3 +1,4 @@
+from gettext import find
 from bs4 import BeautifulSoup
 
 
@@ -21,10 +22,18 @@ with open("home.html", "r") as html_file:
     #     print(course.text)
 
     #Aquí podemos encontrar los precios del tag.
+
+def write(nombre, precio):
+    with open ("prueba.txt","w") as f:
+        f.write(f"Nombre del producto: {nombre}")
+        f.write(f"Precio del producto: {precio}")
+
+def find_price():
     course_cards = soup.find_all("div",class_="caption")
-    # for course in course_cards:
-    #     course_name = course.p.text
-    #     course_price = course.h4.text
-    #     print(course_name, course_price)
+    for course in course_cards:
+        course_name = course.p.text
+        course_price = course.h4.text
+        write(course_name, course_price)
     print(soup)
 
+find_price()
