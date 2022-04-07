@@ -27,12 +27,17 @@ def tipo(url):
     #Buscamos en el csv la etiqueta de la empresa, para obtener los parámetros.
     db = open("empresas.csv","r")
     leer = "a"
-    comparanombre = []
+    resultado = []
     finish = False
+    cont = 0
     while leer != "":
-        leer = db.read(1)
-        if leer != ";":
-            comparanombre.append(leer)
+        nombre = []
+        while leer != ";":
+            leer = db.read(1)
+            nombre.append(leer)
+        
+        resultado.append(nombre)
+        
         
         
 
