@@ -25,8 +25,10 @@ with open("home.html", "r") as html_file:
 
 def write(nombre, precio):
     with open ("prueba.txt","w") as f:
-        f.write(f"Nombre del producto: {nombre}")
-        f.write(f"Precio del producto: {precio}")
+        f.write(nombre)
+        f.write("\n")
+        f.write(precio)
+        f.write("\n")
 
 def find_price():
     course_cards = soup.find_all("div",class_="caption")

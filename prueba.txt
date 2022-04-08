@@ -1,1 +1,18 @@
-Nombre del producto: Asus ASUSPRO B9440UA-GV0279R Gray, 14" FHD, Core i7-7500U, 16GB, 512GB SSD, Windows 10 Pro, Eng kbdPrecio del producto: $1381.13
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    table, th, td {
+    border: 1px solid;
+    border-color:blue;
+    }
+    table {  
+    border-collapse: collapse;
+    }
+  </style>
+<title>PRECIOS</title>
+</head>
+<body>
+<table><th>Nombre producto</th><th>Precio</th><th>Precio Oferta</th><tr><td>pc</td><td><div id="oferta">3.423$</div></td><td><div id="sin">None</div></td></tr><tr></tr><tr><td><div id="nombre">SSD</div></td><td><span class="" data-price-amount="34" data-price-type="finalPrice" id="product-price">34 €</span></td><td>23 €</td></tr><tr></tr><tr><td>disco duro</td><td><div class="precios_" datos="sin_oferta" id="precio_sin_oferta"><span>34_34</span></div></td><td><span id="ofertaza">23_23</span></td></tr><tr></tr><tr><td>disco duro</td><td><div class="precios_" datos="sin_oferta" id="precio_sin_oferta"><span>16</span></div></td><td><span id="ofertaza">42</span></td></tr><tr></tr></table>
+</body>
+</html>
