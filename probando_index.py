@@ -1,4 +1,3 @@
-from cgitb import text
 from bs4 import BeautifulSoup
 import requests
 
@@ -8,12 +7,14 @@ def obtenwalapruebaCSV():
     return resultado
 
 def nombreyprecio(p1,p2,p3,p4):
+    #Pasándole los parámetros de la lista de cada empresa, obtiene el nombre y precio
     nombre = textside.find(p1, {p2:p3}).text
     precio = textside.find(p1, {p2:p4}).text
+    escribe_enCSV(nombre,precio)
     return nombre,precio
 
-def escribeenCSV(nombre,precio):
-    f = open("prueba.txt", "w")
+def escribe_enCSV(nombre,precio):
+    f = open("precios.csv", "w")
     f.write(nombre)
     f.write(";")
     f.write(precio)
