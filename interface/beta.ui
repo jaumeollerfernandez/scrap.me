@@ -306,7 +306,7 @@
      <string>URL</string>
     </property>
    </widget>
-   <widget class="QGroupBox" name="alert_name">
+   <widget class="QGroupBox" name="alerta_name">
     <property name="geometry">
      <rect>
       <x>620</x>
