@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>788</width>
-    <height>460</height>
+    <height>511</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,7 +30,7 @@
      </rect>
     </property>
     <property name="plainText">
-     <string/>
+     <string>NombreProducto</string>
     </property>
    </widget>
    <widget class="QPlainTextEdit" name="Alert">
@@ -43,7 +43,8 @@
      </rect>
     </property>
     <property name="plainText">
-     <string/>
+     <string>Alert
+</string>
     </property>
    </widget>
    <widget class="QPlainTextEdit" name="Precio">
@@ -56,7 +57,7 @@
      </rect>
     </property>
     <property name="plainText">
-     <string/>
+     <string>Precio</string>
     </property>
    </widget>
    <widget class="QPlainTextEdit" name="URL">
@@ -69,33 +70,34 @@
      </rect>
     </property>
     <property name="plainText">
-     <string/>
+     <string>URL
+</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="stop_button">
     <property name="geometry">
      <rect>
-      <x>710</x>
+      <x>690</x>
       <y>390</y>
-      <width>61</width>
+      <width>81</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>Stop</string>
+     <string>stop_button</string>
     </property>
    </widget>
    <widget class="QPushButton" name="play_button">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>610</x>
       <y>390</y>
       <width>75</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>Play</string>
+     <string>play_button</string>
     </property>
    </widget>
    <widget class="QProgressBar" name="progresoBar">
@@ -117,20 +119,20 @@
    <widget class="QLabel" name="nameProgreso">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>390</y>
-      <width>47</width>
-      <height>13</height>
+      <x>400</x>
+      <y>380</y>
+      <width>91</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>Progreso</string>
+     <string>nameProgreso</string>
     </property>
    </widget>
    <widget class="QTimeEdit" name="sleepTime">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>110</x>
       <y>390</y>
       <width>118</width>
       <height>22</height>
@@ -142,25 +144,25 @@
      <rect>
       <x>10</x>
       <y>390</y>
-      <width>71</width>
+      <width>101</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Temporizador</string>
+     <string>nameTemporizador</string>
     </property>
    </widget>
    <widget class="QPushButton" name="sleep_button">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>230</x>
       <y>390</y>
-      <width>75</width>
+      <width>141</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>Aceptar</string>
+     <string>&lt;- sleepTime sleep_button</string>
     </property>
    </widget>
    <widget class="QScrollBar" name="product_verticalScrollBar">
@@ -241,7 +243,7 @@
      <enum>Qt::Vertical</enum>
     </property>
    </widget>
-   <widget class="QScrollBar" name="alerta_verticalScrollBar_4">
+   <widget class="QScrollBar" name="alerta_vertical">
     <property name="geometry">
      <rect>
       <x>750</x>
@@ -254,7 +256,7 @@
      <enum>Qt::Vertical</enum>
     </property>
    </widget>
-   <widget class="QScrollBar" name="alerta_horizontalScrollBar_4">
+   <widget class="QScrollBar" name="alerta_horizontal">
     <property name="geometry">
      <rect>
       <x>510</x>
@@ -270,14 +272,14 @@
    <widget class="QGroupBox" name="producto_name">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>40</x>
       <y>0</y>
-      <width>61</width>
-      <height>16</height>
+      <width>91</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="title">
-     <string>Producto</string>
+     <string>producto_name</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="precio_name">
@@ -290,33 +292,150 @@
      </rect>
     </property>
     <property name="title">
-     <string>Precio</string>
+     <string>precio_name</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="url_name">
     <property name="geometry">
      <rect>
-      <x>380</x>
+      <x>350</x>
       <y>0</y>
-      <width>31</width>
-      <height>16</height>
+      <width>61</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="title">
-     <string>URL</string>
+     <string>url_name</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="alerta_name">
     <property name="geometry">
      <rect>
-      <x>620</x>
+      <x>590</x>
       <y>0</y>
-      <width>61</width>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>alerta_name</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>390</y>
+      <width>120</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>progresoBar</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>350</y>
+      <width>120</width>
       <height>16</height>
      </rect>
     </property>
     <property name="title">
-     <string>Alerta</string>
+     <string>alerta_horizontal</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>140</y>
+      <width>120</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>alerta_vertical</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_4">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>160</y>
+      <width>120</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>url_vertical</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_5">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>350</y>
+      <width>120</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>url_horizontal</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_6">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>350</y>
+      <width>120</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>precio_horizontal</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_7">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>190</y>
+      <width>120</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>precio_vertical</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_8">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>350</y>
+      <width>120</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>nombre_horizontal</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_9">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>160</y>
+      <width>120</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>nombre_vertical</string>
     </property>
    </widget>
   </widget>
