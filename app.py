@@ -1,12 +1,12 @@
 from curses import window
 import sys
 from PySide6.QtWidgets import QApplication
-from interfaz.controllers.main_window import MainWindowForm
+from interface.main_window import main_window
 
 if __name__=='__main__':
     app = QApplication()
     
-    window = MainWindowForm()
+    window = main_window()
     window.show()
     
     sys.exit(app.exec()) 
