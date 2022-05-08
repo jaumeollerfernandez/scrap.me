@@ -78,7 +78,7 @@ class Ui_MainWindow(object):
         self.alerta_name = QGroupBox(self.centralwidget)
         self.alerta_name.setObjectName(u"alerta_name")
         self.alerta_name.setGeometry(QRect(620, 20, 61, 16))
-        # MainWindow.setCentralWidget(self.centralwidget)
+        #MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
         # MainWindow.setStatusBar(self.statusbar)
