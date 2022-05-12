@@ -3,7 +3,7 @@ from __TratoFicheros import TratoFicheros
 
 class Captador():
     def __init__(self, inicio):
-        self.trat = TratoFicheros("BD/baseDatos.txt")
+        self.trat = TratoFicheros("alter_main_program/BD/baseDatos.txt")
         
         self.inicio = inicio
 

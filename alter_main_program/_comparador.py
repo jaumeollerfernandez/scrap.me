@@ -22,7 +22,6 @@ class ComparadorFinal():
         except IOError:
             #Si no existe, lo crea y lo escribe.
             ale = open("BD/alertas.txt","w")
-            print("Nuevo archivo de alertas creado")
         finally:
             ale.close()
 
@@ -33,8 +32,6 @@ class ComparadorFinal():
         except IOError:
             #Si no existe, lo crea y lo escribe.
             tf.TratoFicheros('BD/db.txt',self.preciosactuales).escritura()
-            
-            print("Nuevo archivo creado")
             
     def comparacion(self,fichero):
         self.FicheroDBExiste()

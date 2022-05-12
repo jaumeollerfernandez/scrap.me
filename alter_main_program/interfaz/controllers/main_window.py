@@ -29,8 +29,8 @@ class MainWindowForm(QWidget,Mainwindow):
     def a(self):
         
         Captador(True).introducirURL(self.lista)
-        m = cp.CaptadorPrecios('BD/url_tag.txt').getData()
-        ComparadorFinal(m).comparacion("BD/db.txt")
+        m = cp.CaptadorPrecios('alter_main_program/BD/url_tag.txt').getData()
+        ComparadorFinal(m).comparacion("alter_main_program/BD/db.txt")
         
     def activate(self):
         

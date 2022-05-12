@@ -3,15 +3,18 @@ import requests
 from time import sleep
 from bs4 import BeautifulSoup
 from pickle import NONE
-import __TratoFicheros as tf
+import alter_main_program.__TratoFicheros as tf
+from testeo import main_window
 #---------------------------------------------------------------------------------------------------------
 
 #CLASE PARA BUSCAR LOS PRECIOS Y NOMBRES DE LAS WEBS SOLICITADAS
 class CaptadorPrecios:
-    
-    def __init__(self,p1='BD/url_tag.txt'):
+    def __init__(self,p1='BD/url_tag.txt', f=None,cv=None):
         self.data = p1
         self.b=tf.TratoFicheros(self.data,NONE).lectura()
+        #self.PRUEBA = main_window.main_window()
+        self.func = f
+        self.v = cv
         self.headers = {
                 'User-Agent': 'Mozilla/6.0 (Windows NT 10.0; Win64; x64; rv:94.0) Gecko/20100101 Firefox/94.0',
                 'Accept-Language': 'en-US, en;q=0.5'
@@ -115,6 +118,10 @@ class CaptadorPrecios:
             product_name = self.getName(soup,i,self)        
             #############################################################################
             lista.append([str(cont),product_name,product_price,self.b[i][1]])
+            #self.PRUEBA.Meterdatosenpantalla(product_name, product_price, self.b[i][1], 1)
+            #self.func(product_name, product_price, self.b[i][1], 1)
+            self.v.Meterdatosenpantalla(product_name, product_price, self.b[i][1], 1)
+
             product_price=''
             product_name=''
             

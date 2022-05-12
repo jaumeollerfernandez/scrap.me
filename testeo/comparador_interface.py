@@ -16,9 +16,10 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QGroupBox, QLabel, QMainWindow,
-    QMenu, QMenuBar, QPlainTextEdit, QPushButton,
-    QSizePolicy, QStatusBar, QTimeEdit, QWidget)
+from PySide6.QtWidgets import (QApplication, QGroupBox, QLabel, QListWidget,
+    QListWidgetItem, QMainWindow, QMenu, QMenuBar,
+    QPushButton, QSizePolicy, QStatusBar, QTimeEdit,
+    QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -39,18 +40,6 @@ class Ui_MainWindow(object):
         self.actionEliminar_alertas_txt.setObjectName(u"actionEliminar_alertas_txt")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.NombreProducto = QPlainTextEdit(self.centralwidget)
-        self.NombreProducto.setObjectName(u"NombreProducto")
-        self.NombreProducto.setGeometry(QRect(10, 50, 171, 321))
-        self.Alert = QPlainTextEdit(self.centralwidget)
-        self.Alert.setObjectName(u"Alert")
-        self.Alert.setGeometry(QRect(510, 50, 261, 321))
-        self.Precio = QPlainTextEdit(self.centralwidget)
-        self.Precio.setObjectName(u"Precio")
-        self.Precio.setGeometry(QRect(190, 50, 91, 321))
-        self.URL = QPlainTextEdit(self.centralwidget)
-        self.URL.setObjectName(u"URL")
-        self.URL.setGeometry(QRect(290, 50, 211, 321))
         self.stop_button = QPushButton(self.centralwidget)
         self.stop_button.setObjectName(u"stop_button")
         self.stop_button.setGeometry(QRect(710, 390, 61, 23))
@@ -78,16 +67,28 @@ class Ui_MainWindow(object):
         self.alerta_name = QGroupBox(self.centralwidget)
         self.alerta_name.setObjectName(u"alerta_name")
         self.alerta_name.setGeometry(QRect(620, 20, 61, 16))
-        #MainWindow.setCentralwidget(self.centralwidget)
+        self.NombreProducto = QListWidget(self.centralwidget)
+        self.NombreProducto.setObjectName(u"NombreProducto")
+        self.NombreProducto.setGeometry(QRect(20, 40, 141, 281))
+        self.Precio = QListWidget(self.centralwidget)
+        self.Precio.setObjectName(u"Precio")
+        self.Precio.setGeometry(QRect(170, 40, 141, 281))
+        self.URL = QListWidget(self.centralwidget)
+        self.URL.setObjectName(u"URL")
+        self.URL.setGeometry(QRect(330, 40, 231, 281))
+        self.Alert = QListWidget(self.centralwidget)
+        self.Alert.setObjectName(u"Alert")
+        self.Alert.setGeometry(QRect(570, 40, 201, 281))
+        #MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
-        # MainWindow.setStatusBar(self.statusbar)
+        #MainWindow.setStatusBar(self.statusbar)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
         self.menubar.setGeometry(QRect(0, 0, 788, 21))
         self.menuArchivo = QMenu(self.menubar)
         self.menuArchivo.setObjectName(u"menuArchivo")
-        # MainWindow.setMenuBar(self.menubar)
+        #MainWindow.setMenuBar(self.menubar)
 
         self.menubar.addAction(self.menuArchivo.menuAction())
         self.menuArchivo.addAction(self.actionAbrir_db_txt)
@@ -102,16 +103,12 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"scrap.me", None))
+        #MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.actionAbrir_db_txt.setText(QCoreApplication.translate("MainWindow", u"Abrir db.txt", None))
         self.actionAbrir_alertas_txt.setText(QCoreApplication.translate("MainWindow", u"Abrir alertas.txt", None))
         self.actionSalir.setText(QCoreApplication.translate("MainWindow", u"Salir", None))
         self.actionEliminar_db_txt.setText(QCoreApplication.translate("MainWindow", u"Eliminar db.txt", None))
         self.actionEliminar_alertas_txt.setText(QCoreApplication.translate("MainWindow", u"Eliminar alertas.txt", None))
-        self.NombreProducto.setPlainText("")
-        self.Alert.setPlainText("")
-        self.Precio.setPlainText("")
-        self.URL.setPlainText("")
         self.stop_button.setText(QCoreApplication.translate("MainWindow", u"Stop", None))
         self.play_button.setText(QCoreApplication.translate("MainWindow", u"Play", None))
         self.nameTemporizador.setText(QCoreApplication.translate("MainWindow", u"Temporizador", None))

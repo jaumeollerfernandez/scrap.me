@@ -20,58 +20,6 @@
    <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPlainTextEdit" name="NombreProducto">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>50</y>
-      <width>171</width>
-      <height>321</height>
-     </rect>
-    </property>
-    <property name="plainText">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="Alert">
-    <property name="geometry">
-     <rect>
-      <x>510</x>
-      <y>50</y>
-      <width>261</width>
-      <height>321</height>
-     </rect>
-    </property>
-    <property name="plainText">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="Precio">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>50</y>
-      <width>91</width>
-      <height>321</height>
-     </rect>
-    </property>
-    <property name="plainText">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="URL">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>50</y>
-      <width>211</width>
-      <height>321</height>
-     </rect>
-    </property>
-    <property name="plainText">
-     <string/>
-    </property>
-   </widget>
    <widget class="QPushButton" name="stop_button">
     <property name="geometry">
      <rect>
@@ -184,6 +132,46 @@
     </property>
     <property name="title">
      <string>Alerta</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="NombreProducto">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>141</width>
+      <height>281</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="Precio">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>40</y>
+      <width>141</width>
+      <height>281</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="URL">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>40</y>
+      <width>231</width>
+      <height>281</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="Alert">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>40</y>
+      <width>201</width>
+      <height>281</height>
+     </rect>
     </property>
    </widget>
   </widget>
