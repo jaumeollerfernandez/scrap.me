@@ -39,7 +39,7 @@ class main_window(QWidget,Ui_MainWindow):
     def Start(self):
         
         m = cp.CaptadorPrecios('alter_main_program/BD/url_tag.txt',self.Meterdatosenpantalla, self).getData()
-        compara.ComparadorFinal.comparacion(self,"alter_main_program/BD/db.txt")
+        compara.ComparadorFinal.comparacion('alter_main_program/BD/db.txt',self.Meteralertasenpantalla, self)
     
     def Meterdatosenpantalla(self,a,b,c):
         self.PRODUCTtext.addItem(str(a))     
