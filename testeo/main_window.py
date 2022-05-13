@@ -31,16 +31,17 @@ class main_window(QWidget,Ui_MainWindow):
         self.PRODUCTtext = self.NombreProducto
         ButtonStop.clicked.connect(self.say_hello)
         ButtonPlay.clicked.connect(self.Start)
-    
+        self.bol = False
     def say_hello(self):
         text = "aaaaaa"
         print(text)
 
     def Start(self):
+        self.bol = True
         
         m = cp.CaptadorPrecios('alter_main_program/BD/url_tag.txt',self.Meterdatosenpantalla, self).getData()
-        compara.ComparadorFinal.comparacion('alter_main_program/BD/db.txt',self.Meteralertasenpantalla, self)
-    
+        compara.ComparadorFinal(m,self.Meteralertasenpantalla, self).comparacion("alter_main_program/BD/db.txt")
+
     def Meterdatosenpantalla(self,a,b,c):
         self.PRODUCTtext.addItem(str(a))     
         self.PRICEtext.addItem(str(b))
