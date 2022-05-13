@@ -87,7 +87,7 @@ class Captador():
         # [ [1, 'www.youtube.com', '<div1>', '<div2.1>', '<div2.2>', '<div2.3>'], 
         #   [2, 'www.google.es', '<div3>', '<div4>'], 
         #   [3, 'www.kyoto.com', '<div5>', '<div6>'] ]
-        TratoFicheros("BD/url_tag.txt", listaURLTAGS).escritura()
+        TratoFicheros("alter_main_program/BD/url_tag.txt", listaURLTAGS).escritura()
 
 
 

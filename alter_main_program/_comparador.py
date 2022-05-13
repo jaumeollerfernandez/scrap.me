@@ -3,35 +3,35 @@
 #FicheroExiste() deberá ver si se ha realizado el archivo o no. Si existe, leerá el archivo y lo guardará en un array
 #Comparacion() deberá comparar los dos datos de los dos arrays. Leerá el anterior mediante el método, y luego lo comparará con el nuevo.
 #Si no hay novedad, mantendrá los precios actualizados.
-import _captadorDatosWeb as cp
-import __TratoFicheros as tf
+from alter_main_program import _captadorDatosWeb as cp
+from alter_main_program import __TratoFicheros as tf
+from testeo import main_window
 import datetime
-
-
 
 
 class ComparadorFinal():
     def __init__(self, preciosactuales):
         self.preciosactuales = preciosactuales
+        self.alerta = ""
     
     def FicheroAlertaExiste(self):
         #Lo unico que hace este metodo es crear el archivo si no existe.
         try:
             #Si existe, lo abre por aquí.
-            ale = open("BD/alertas.txt")
+            ale = open("alter_main_program/BD/alertas.txt")
         except IOError:
             #Si no existe, lo crea y lo escribe.
-            ale = open("BD/alertas.txt","w")
+            ale = open("alter_main_program/BD/alertas.txt","w")
         finally:
             ale.close()
 
     def FicheroDBExiste(self):
         try:
             #Si existe, lo abre por aquí.
-            f = open("BD/db.txt")
+            f = open("alter_main_program/BD/db.txt")
         except IOError:
             #Si no existe, lo crea y lo escribe.
-            tf.TratoFicheros('BD/db.txt',self.preciosactuales).escritura()
+            tf.TratoFicheros('alter_main_program/BD/db.txt',self.preciosactuales).escritura()
             
     def comparacion(self,fichero):
         self.FicheroDBExiste()
@@ -55,7 +55,7 @@ class ComparadorFinal():
                         #Realiza la alerta correspondiente y la escribe en el documento.
                     self.FicheroAlertaExiste()
                     time = str(datetime.datetime.now())
-                    with open ("BD/alertas.txt","a") as f:
+                    with open ("alter_main_program/BD/alertas.txt","a") as f:
                         f.write("El precio de ")
                         f.write(oldfile[i][1])
                         f.write(" es de ")
@@ -63,8 +63,11 @@ class ComparadorFinal():
                         f.write(" a las ")
                         f.write(time)
                         f.write("\n")
-        #Escribe los datos actualizados a la base de datos.                
-        tf.TratoFicheros("BD/db.txt",oldfile).escritura()
+                    self.alerta = oldfile[i][2]
+                    #main_window.main_window.Meteralertasenpantalla(self.alerta)
+
+        #Escribe los datos actualizados a la base de datos.   
+        tf.TratoFicheros("alter_main_program/BD/db.txt",oldfile).escritura()
         
         return oldfile
 

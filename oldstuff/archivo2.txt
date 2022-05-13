@@ -1,2 +1,0 @@
-www.amazon.com,<div>,<div2>
-www.amazon2.com,<div>,<div2>

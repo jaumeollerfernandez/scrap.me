@@ -11,6 +11,7 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
 from testeo.comparador_interface import Ui_MainWindow
 from alter_main_program import _captadorDatosWeb as cp
 from alter_main_program import __TratoFicheros as tf
+from alter_main_program import _comparador as compara
 from time import sleep
 
 
@@ -38,16 +39,14 @@ class main_window(QWidget,Ui_MainWindow):
     def Start(self):
         
         m = cp.CaptadorPrecios('alter_main_program/BD/url_tag.txt',self.Meterdatosenpantalla, self).getData()
-        #    (m).comparacion("alter_main_program/BD/db.txt")
+        compara.ComparadorFinal.comparacion(self,"alter_main_program/BD/db.txt")
     
-    def Meterdatosenpantalla(self,a,b,c,d):
+    def Meterdatosenpantalla(self,a,b,c):
         self.PRODUCTtext.addItem(str(a))     
         self.PRICEtext.addItem(str(b))
         self.URLtext.addItem(str(c))
-        self.ALERTtext.addItem(str(d))
-
-
-
-
-        
+        #self.ALERTtext.addItem(str(d))
+    
+    def Meteralertasenpantalla(self,a):
+        self.ALERTtext.addItem(str(a))
 
