@@ -1,0 +1,24 @@
+EJEMPLOS:
+#1 libreria clase OMG - ZMQ
+cliente.py
+servidor.py
+#ejecutar el servidor y despues cliente. 
+Recibirá mensaje del servidor.
+Escribir algo intro en el servidor despues, mandará un segundo mensaje.
+#2
+gui_cliente1.py
+servidor.py
+
+#ejemplo de importación .ui, eventos installfilter. HILOS
+#ejecutar el servidor para ver ejecucion cliente (parte gráfica) - servidor terminal
+
+#3
+gui_client2.py
+servidor.py
+#ejemplo de generación ventana con pyside6-uic, eventos de sistema listener.
+#ejecutar el servidor para ver ejecucion cliente (parte gráfica) - servidor terminal
+
+#4
+test.py
+#ejemplo de ventana y evento, programa directamente.
+
