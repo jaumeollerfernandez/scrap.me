@@ -16,7 +16,7 @@ class ComparadorFinal():
         self.bol = False
         self.encontrado = ""
         self.noencontrado = "No ha habido cambios"
-        self.outstock = "Producto fuera de la web"
+    
     def FicheroAlertaExiste(self, fichero):
         #Lo unico que hace este metodo es crear el archivo si no existe.
         try:
@@ -53,41 +53,35 @@ class ComparadorFinal():
             self.bol = False
             x=oldfile[i][0]
             y=self.preciosactuales[i][0]
-            if self.preciosactuales[i][1] == "" or self.preciosactuales[i][2] == "":
-                oldfile[i][1] = self.outstock
-                oldfile[i][2] = self.outstock
-                self.metodo(self.outstock)
-            else:
-
-                if oldfile[i][0] == self.preciosactuales[i][0]:
-                    if oldfile[i][1] != self.preciosactuales[i][1]:
-                        oldfile[i][1]=self.preciosactuales[i][1]
-                        #Convertimos a decimal
-                    a = float(self.preciosactuales[i][2])
-                    b = float(oldfile[i][2])
-                        #Comparamos precios. Si es menor, lo machaca.
-                    if a < b:
-                        #Lo prepara en string para la alerta en pantalla
-                        self.encontrado = self.resta(b,a)
-                        oldfile[i][2] = str(a)
-                        #Booleano para que no imprima mas veces el "No ha habido cambios" cuando si ha habido
-                        self.bol = True
-                        #Realiza la alerta correspondiente y la escribe en el documento.
-                        self.FicheroAlertaExiste("alter_main_program/BD/alertas.txt")
-                        time = str(datetime.datetime.now())
-                        with open ("alter_main_program/BD/alertas.txt","a") as f:
-                            f.write("El precio de ")
-                            f.write(oldfile[i][1])
-                            f.write(" es de ")
-                            f.write(str(a))
-                            f.write(" a las ")
-                            f.write(time)
-                            f.write("\n")
-                        self.metodo(self.encontrado)
-                    #En caso de que no haya cambios, en la pantalla se mostrará esto
-                    if oldfile[i][1] == self.preciosactuales[i][1] and self.bol == False:
-                        print(oldfile[i][1])
-                        self.metodo(self.noencontrado)          
+            if oldfile[i][0] == self.preciosactuales[i][0]:
+                if oldfile[i][1] != self.preciosactuales[i][1]:
+                    oldfile[i][1]=self.preciosactuales[i][1]
+                    #Convertimos a decimal
+                a = float(self.preciosactuales[i][2])
+                b = float(oldfile[i][2])
+                    #Comparamos precios. Si es menor, lo machaca.
+                if a < b:
+                    #Lo prepara en string para la alerta en pantalla
+                    self.encontrado = self.resta(b,a)
+                    oldfile[i][2] = str(a)
+                    #Booleano para que no imprima mas veces el "No ha habido cambios" cuando si ha habido
+                    self.bol = True
+                    #Realiza la alerta correspondiente y la escribe en el documento.
+                    self.FicheroAlertaExiste("alter_main_program/BD/alertas.txt")
+                    time = str(datetime.datetime.now())
+                    with open ("alter_main_program/BD/alertas.txt","a") as f:
+                        f.write("El precio de ")
+                        f.write(oldfile[i][1])
+                        f.write(" es de ")
+                        f.write(str(a))
+                        f.write(" a las ")
+                        f.write(time)
+                        f.write("\n")
+                    self.metodo(self.encontrado)
+                #En caso de que no haya cambios, en la pantalla se mostrará esto
+                if oldfile[i][1] == self.preciosactuales[i][1] and self.bol == False:
+                    print(oldfile[i][1])
+                    self.metodo(self.noencontrado)          
 
         #Escribe los datos actualizados a la base de datos.   
         tf.TratoFicheros("alter_main_program/BD/db.txt",oldfile).escritura()

@@ -1,4 +1,5 @@
 from datetime import time
+import os
 from PySide6.QtWidgets import QWidget, QPushButton, QApplication, QMainWindow
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
@@ -13,6 +14,7 @@ from alter_main_program import _captadorDatosWeb as cp
 from alter_main_program import __TratoFicheros as tf
 from alter_main_program import _comparador as compara
 from time import sleep
+from threading import Thread
 
 
 class main_window(QWidget,Ui_MainWindow):
@@ -24,30 +26,66 @@ class main_window(QWidget,Ui_MainWindow):
         ButtonStop = self.stop_button
         ButtonPlay = self.play_button
 
+        #Hilos para ejecutar las funciones de scraping
+        self.h1 = Thread(target=self.hilo_captador)
+
         #Cuadros de texto
         self.URLtext = self.URL
         self.PRICEtext = self.Precio
         self.ALERTtext = self.Alert
         self.PRODUCTtext = self.NombreProducto
-        ButtonStop.clicked.connect(self.say_hello)
-        ButtonPlay.clicked.connect(self.Start)
+        ButtonStop.clicked.connect(self.Stop)
+        ButtonPlay.clicked.connect(self.h1.start)
         self.bol = False
-    def say_hello(self):
-        text = "aaaaaa"
-        print(text)
+        # self.actionAbrir_alertas_txt
+        # self.actionAbrir_db_txt
+        self.actionEliminar_alertas_txt.triggered.connect(self.deleteFile_alertas)
+        self.actionEliminar_db_txt.triggered.connect(self.deleteFile_db)
+        self.h2 = Thread(target=self.printbol)
+        self.h2.start
+    #Esta función elimina el hilo para volverlo a lanzar, y así liberar memoria
 
-    def Start(self):
+    def printbol(self):
+        while True:
+            print(self.bol)
+            
+    def deleteFile_alertas(self):
+        fp = open("alter_main_program/BD/alertas.txt","r+")
+        fp.seek(0,0)
+        fp.truncate()
+        fp.close()
+
+    def deleteFile_db(self):
+        fp = open("alter_main_program/BD/db.txt","r+")
+        fp.seek(0,0)
+        fp.truncate()
+        fp.close()
+
+    def deleteFile_urltag(self):
+        fp = open("alter_main_program/BD/url_tag.txt","r+")
+        fp.seek(0,0)
+        fp.truncate()
+        fp.close()
+
+    def Stop(self):
+        self.bol = False
+        self.h1.join()
+        self.h1 = Thread(target=self.hilo_captador)
+
+    def hilo_captador(self):
         self.bol = True
-        
-        m = cp.CaptadorPrecios('alter_main_program/BD/url_tag.txt',self.Meterdatosenpantalla, self).getData()
-        compara.ComparadorFinal(m,self.Meteralertasenpantalla, self).comparacion("alter_main_program/BD/db.txt")
+        while self.bol == True:
+            # self.play_button.
+            m = cp.CaptadorPrecios('alter_main_program/BD/url_tag.txt',self.Meterdatosenpantalla, self).getData()
+            compara.ComparadorFinal(m,self.Meteralertasenpantalla, self).comparacion("alter_main_program/BD/db.txt")
+            sleep(2)
 
     def Meterdatosenpantalla(self,a,b,c):
         self.PRODUCTtext.addItem(str(a))     
         self.PRICEtext.addItem(str(b))
         self.URLtext.addItem(str(c))
-        #self.ALERTtext.addItem(str(d))
     
     def Meteralertasenpantalla(self,a):
         self.ALERTtext.addItem(str(a))
+    
 
