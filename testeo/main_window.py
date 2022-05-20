@@ -65,15 +65,20 @@ class main_window(QWidget,Ui_MainWindow):
 
     def Stop(self):
         self.bol = False
+        while self.h1.is_alive():
+            print("esta vivo")
+            sleep(0.5)
+        self.h1 = Thread(target=self.hilo_captador)
 
     def hilo_captador(self):
-        # self.bol = True
-        # while self.bol == True:
-        #     # self.play_button.
-        self.h1 = Thread(target=self.hilo_captador)
-        m = cp.CaptadorPrecios('alter_main_program/BD/url_tag.txt',self.Meterdatosenpantalla, self).getData()
-        compara.ComparadorFinal(m,self.Meteralertasenpantalla, self).comparacion("alter_main_program/BD/db.txt")
-        
+        print("inicia")
+        self.bol = True
+        while self.bol == True:
+            m = cp.CaptadorPrecios('alter_main_program/BD/url_tag.txt',self.Meterdatosenpantalla, self).getData()
+            compara.ComparadorFinal(m,self.Meteralertasenpantalla, self).comparacion("alter_main_program/BD/db.txt")
+            sleep(2)
+        print("finaliza")
+
     def Meterdatosenpantalla(self,a,b,c):
         self.PRODUCTtext.addItem(str(a))     
         self.PRICEtext.addItem(str(b))
