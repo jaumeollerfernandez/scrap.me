@@ -41,45 +41,39 @@ class main_window(QWidget,Ui_MainWindow):
         # self.actionAbrir_db_txt
         self.actionEliminar_alertas_txt.triggered.connect(self.deleteFile_alertas)
         self.actionEliminar_db_txt.triggered.connect(self.deleteFile_db)
-        self.h2 = Thread(target=self.printbol)
-        self.h2.start
+        
     #Esta función elimina el hilo para volverlo a lanzar, y así liberar memoria
-
-    def printbol(self):
-        while True:
-            print(self.bol)
             
     def deleteFile_alertas(self):
-        fp = open("alter_main_program/BD/alertas.txt","r+")
+        fp = open("alter_main_program/BD/alertas.txt","a")
         fp.seek(0,0)
         fp.truncate()
         fp.close()
 
     def deleteFile_db(self):
-        fp = open("alter_main_program/BD/db.txt","r+")
-        fp.seek(0,0)
-        fp.truncate()
-        fp.close()
+        os.remove("alter_main_program/BD/db.txt")
+        # fp = open("alter_main_program/BD/db.txt","w")
+        # fp.seek(0,0)
+        # fp.truncate()
+        # fp.close()
 
     def deleteFile_urltag(self):
-        fp = open("alter_main_program/BD/url_tag.txt","r+")
+        fp = open("alter_main_program/BD/url_tag.txt","w")
         fp.seek(0,0)
         fp.truncate()
         fp.close()
 
     def Stop(self):
         self.bol = False
-        self.h1.join()
-        self.h1 = Thread(target=self.hilo_captador)
 
     def hilo_captador(self):
-        self.bol = True
-        while self.bol == True:
-            # self.play_button.
-            m = cp.CaptadorPrecios('alter_main_program/BD/url_tag.txt',self.Meterdatosenpantalla, self).getData()
-            compara.ComparadorFinal(m,self.Meteralertasenpantalla, self).comparacion("alter_main_program/BD/db.txt")
-            sleep(2)
-
+        # self.bol = True
+        # while self.bol == True:
+        #     # self.play_button.
+        self.h1 = Thread(target=self.hilo_captador)
+        m = cp.CaptadorPrecios('alter_main_program/BD/url_tag.txt',self.Meterdatosenpantalla, self).getData()
+        compara.ComparadorFinal(m,self.Meteralertasenpantalla, self).comparacion("alter_main_program/BD/db.txt")
+        
     def Meterdatosenpantalla(self,a,b,c):
         self.PRODUCTtext.addItem(str(a))     
         self.PRICEtext.addItem(str(b))
