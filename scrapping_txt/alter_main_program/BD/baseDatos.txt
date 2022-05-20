@@ -1,0 +1,4 @@
+amazon*span*class*a-offscreen*span*class*a-size-large product-title-word-break
+kyotoelectrodomesticos*span*class*regular-price*div*class*product-name
+worten*span*class*w-product__price__current iss-product-current-price*h1*class*w-product__name iss-product-name
+miro*span*class*regular-price*div*class*product-name

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1001</width>
+    <height>477</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>0</y>
+     <width>991</width>
+     <height>481</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:white</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QPushButton" name="botonInicio">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>380</y>
+      <width>191</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:green</string>
+    </property>
+    <property name="text">
+     <string>al login</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="registro_boton">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>370</y>
+      <width>201</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:blue</string>
+    </property>
+    <property name="text">
+     <string>REGISTRAR</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="nick_input">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>130</y>
+      <width>201</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">margin: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="nombre_input">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>230</y>
+      <width>201</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">margin: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="apellidos_input">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>280</y>
+      <width>201</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">margin: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="contrasea_input">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>180</y>
+      <width>201</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">margin: 2px;</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

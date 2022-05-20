@@ -1,0 +1,22 @@
+1-los metodos de escritura,lectura y update haria unos procedures para optimizar el programa.
+
+2-Estructura con sistema de usuarios
+pasos:
+-------{
+    1-LOGIN-devuelve true y se inicia la interfaz(La de los inputs).
+    2-automaticamente busca en la bd los productos suyos (select producto y id_usuario) (CREAR TABLA NUEVA)(CREADA).
+    3-cuando obtenga los resultados se muestran en la interfaz.(LA INICIAL DEL INPUT).
+    4-se puede hacer inputs de urls esta conectara con la base de datos y añadira al usuario una url mas a su lista.
+    (el registro se le añadira tambien una id de 1,2,3... que sera el len(del query)+1 asi nos aseguramos de que sea automatico).
+    5-al hacer el input llamaremos automaticamente otra vez a la funcion de buscar en la tabla las url para que se apliquen en la interfaz.
+    6-una vez listo damos a iniciar y se abrira la interfaz de jaume.
+    
+
+    
+
+
+Preparar el register
+Preparar el captador
+
+Preparar el comparador
+}

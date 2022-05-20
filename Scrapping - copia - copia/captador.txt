@@ -1,0 +1,51 @@
+
+LEELO TODO ANTES DE PICAR CODIGO, INTENTA QUE SE PAREZCA A LO QUE YA HAY, SUERTE :D
+
+
+
+cosas a crear:{
+
+    tablas = {
+        TAGS (PK:nombreEmpresa,tag1,tag2,tag3,tag4,tag5,tag6)
+        URL_TAGS(PK:id,FK:id_usuario,FK:url,FK:tag1,FK:tag2.....)
+    }
+
+    metodos de la clase conexion = {
+
+        lecturaTAGS --> solo va a leer la tabla TAGS
+        escritura_URL_TAGS --> este escribe en URL_TAGS el el resultado final.
+    }
+
+}
+
+
+el captador se inicia cuando le demos en la inetrfaz input al boton start.
+
+-este va a coger con el metodo lectura de conexion las url del usuario conectado.
+(le pasa por parametros a dicho metodo la tabla productos y el id_usuario que este, (solo el id_usuario), tiene que ser reecogido
+por el mismo constructor de la clase captador, es decir cuando yo le de a start en la interfaz input llamare 
+la funcion captador y le pasare por parametro el id_usuario para que esté como self en captador y se lo puedas pasar 
+a cualquier metodo de la clase captador).
+
+-Ahora ya tienes todas las url en una lista pero habra ej:[(id, id_usuario, url),(id, id_usuario, url),(id, id_usuario, url)]
+(bien aqui tendras que idear algun sistema para solo quedarte con las url, por ejemplo con un list.append(ejemplo[i][2]))
+
+
+-Bien ahora se trata de reutilizar tu codigo captador para extraer la empresa de cada url. (amazong,kyoto,miro..)
+
+-cuando ya tengas ese resultado se trata instanciar el metodo lecturaTAGS para coger toda la informacion de ej:amazon tag1 tag2 tag3 tag4...
+
+-Ahora recuerda que la informacion te viene de la misma manera que antes [(amazon,tag1,tag2...),(kyoto...)]
+(se trata de que relaciones todos los campos de tal manera que hagas una instancia de del metodo escritura_URL_TAGS de la clase conexion
+y le pases por parametros un id, id_usuario(que es el self del constructor),url,tag1,tag2,....)
+
+EN LA BD TIENE QUE QUEDAR ASI : (
+
+    1*OSCARMEGAPOLLA*https://www.kyotoelectrodomesticos.com/radio-portatil-sony-icfp-37.html*span*class*regular-price*div*class*product-name
+    2*OSCARMEGAPOLLA*https://www.miro.es/reloj-pulsera-xiaomi-mi-watch-lite.html*span*class*regular-price*div*class*product-name
+
+)
+
+
+
+METODO escritura_URL_TAGS ----> SENTENCIAS SQL 
