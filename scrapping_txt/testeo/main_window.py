@@ -34,7 +34,8 @@ class main_window(QWidget,Ui_MainWindow):
         self.PRICEtext = self.Precio
         self.ALERTtext = self.Alert
         self.PRODUCTtext = self.NombreProducto
-
+        self.ValorTiempo = self.spinBox
+        self.sleep_button.clicked.connect(self.Definirtiempo)
         self.play_button.clicked.connect(self.h1.start)
         self.bol = False
         # self.actionAbrir_alertas_txt
@@ -83,9 +84,10 @@ class main_window(QWidget,Ui_MainWindow):
             self.ALERTtext.clear()
             m = cp.CaptadorPrecios('alter_main_program/BD/url_tag.txt',self.Meterdatosenpantalla, self).getData()
             compara.ComparadorFinal(m,self.Meteralertasenpantalla, self).comparacion("alter_main_program/BD/db.txt")
-            sleep(2)
+            sleep(self.ValorTiempo)
         print("finaliza")
         self.stop_button.clicked.connect(self.Stop)
+        self.sleep_button.clicked.connect(self.Definirtiempo)
 
     def Meterdatosenpantalla(self,a,b,c):
         self.PRODUCTtext.addItem(str(a))     
@@ -94,5 +96,11 @@ class main_window(QWidget,Ui_MainWindow):
     
     def Meteralertasenpantalla(self,a):
         self.ALERTtext.addItem(str(a))
+    def Definirtiempo(self):
+        self.ValorTiempo = self.spinBox.value()
+
+
+
+    
     
 
