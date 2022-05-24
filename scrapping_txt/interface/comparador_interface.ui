@@ -56,7 +56,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Tiempo (minutos)</string>
+     <string>Tiempo (segundos)</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="producto_name">
