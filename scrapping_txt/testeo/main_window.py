@@ -109,6 +109,7 @@ class main_window(QWidget,Ui_MainWindow):
     
     def Meteralertasenpantalla(self,a):
         self.ALERTtext.addItem(str(a))
+        
     def Definirtiempo(self):
         self.ValorTiempo = self.spinBox.value()
         self.play_button.setDisabled(False)
