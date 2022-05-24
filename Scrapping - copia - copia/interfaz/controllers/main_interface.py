@@ -26,10 +26,6 @@ class MainInterface(QWidget,MainWindowInterface):
         self.user = user
         self.widget = widget
 
-        #Botones
-        ButtonStop = self.stop_button
-        ButtonPlay = self.play_button
-
         #Hilos para ejecutar las funciones de scraping
         self.h1 = Thread(target=self.hilo_captador)
 
@@ -39,15 +35,27 @@ class MainInterface(QWidget,MainWindowInterface):
         self.ALERTtext = self.Alert
         self.PRODUCTtext = self.NombreProducto
 
+        self.ValorTiempo = self.spinBox
+        self.play_button.setDisabled(True)
+        self.stop_button.setDisabled(True)
+        self.sleep_button.clicked.connect(self.Definirtiempo)
         self.play_button.clicked.connect(self.h1.start)
         self.bol = False
-        # self.actionAbrir_alertas_txt
-        # self.actionAbrir_db_txt
+
+        self.actionAbrir_alertas_txt.triggered.connect(self.deleteFile_alertas)
+        self.actionAbrir_db_txt.triggered.connect(self.deleteFile_db)
         self.actionEliminar_alertas_txt.triggered.connect(self.deleteFile_alertas)
         self.actionEliminar_db_txt.triggered.connect(self.deleteFile_db)
-        
+    
     #Esta función elimina el hilo para volverlo a lanzar, y así liberar memoria
             
+    def openfile_alertas(self):
+        #No funciona bien, porque requiere ruta absoluta.
+        os.startfile("C:/Users/jaume/Mi unidad/DAW/Github/scrap.me/scrapping_txt/alter_main_program/BD/alertas.txt")
+
+    def openfile_db(self):
+        os.startfile("alter_main_program/BD/db.txt")
+
     def deleteFile_alertas(self):
         fp = open("alter_main_program/BD/alertas.txt","a")
         fp.seek(0,0)
@@ -75,6 +83,8 @@ class MainInterface(QWidget,MainWindowInterface):
         
         self.h1 = Thread(target=self.hilo_captador)
         self.play_button.clicked.connect(self.h1.start)
+        self.play_button.setDisabled(True)
+        self.stop_button.setDisabled(True)
 
     def hilo_captador(self):
         print("inicia")
@@ -92,6 +102,7 @@ class MainInterface(QWidget,MainWindowInterface):
             sleep(2)
         print("finaliza")
         self.stop_button.clicked.connect(self.Stop)
+        self.sleep_button.clicked.connect(self.Definirtiempo)
 
     def Meterdatosenpantalla(self,array):
         i=0
@@ -104,4 +115,8 @@ class MainInterface(QWidget,MainWindowInterface):
     def Meteralertasenpantalla(self,a):
         self.ALERTtext.addItem(str(a))
     
+    def Definirtiempo(self):
+        self.ValorTiempo = self.spinBox.value()
+        self.play_button.setDisabled(False)
+        self.stop_button.setDisabled(False)
 

@@ -43,75 +43,13 @@ class ComparadorFinal():
                 if response[i][3] > self.preciosactuales[i][3]:
                     con.Conexion("comparador").update(self.preciosactuales[i][3],self.preciosactuales[i][0],self.user)
                     print('precio cambiado')
+                    time = str(datetime.datetime.now())
+                    with open (f"DB/{self.user}_alertas.txt","a") as f: 
+                        f.write("El precio de ")
+                        f.write(response[i][2])
+                        f.write(" es de ")
+                        f.write(str(self.preciosactuales[i][3]))
+                        f.write(" a las ")
+                        f.write(time)
+                        f.write("\n")
             i+=1
-        #Aquí leerá el archivo db con la clase escritura
-        # oldfile = tf.TratoFicheros(fichero).lectura()
-        # resultado = []
-        # #Empieza las comparaciones y búsquedas de precios
-        # for i in range(len(oldfile)):
-        #     #Iteramos para buscar una coincidencia en el nombre
-        #     x=oldfile[i][0]
-        #     y=self.preciosactuales[i][0]
-        #     if oldfile[i][0] == self.preciosactuales[i][0]:
-        #         if oldfile[i][1] != self.preciosactuales[i][1]:
-        #             oldfile[i][1]=self.preciosactuales[i][1]
-        #             #Convertimos a decimal
-        #         a = float(self.preciosactuales[i][2])
-        #         b = float(oldfile[i][2])
-        #             #Comparamos precios. Si es menor, lo machaca.
-        #         if a < b:
-        #             oldfile[i][2] = str(a)
-        #                 #Realiza la alerta correspondiente y la escribe en el documento.
-        #             self.FicheroAlertaExiste()
-        #             time = str(datetime.datetime.now())
-        #             with open ("DB/alertas.txt","a") as f:
-        #                 f.write("El precio de ")
-        #                 f.write(oldfile[i][1])
-        #                 f.write(" es de ")
-        #                 f.write(str(a))
-        #                 f.write(" a las ")
-        #                 f.write(time)
-        #                 f.write("\n")
-        # #Escribe los datos actualizados a la base de datos.                
-        # tf.TratoFicheros("db.txt",oldfile).escritura()
-        
-        # return oldfile
-
-
-
-
-
-
-
-
-
-
-
-# try:
-#     f = open("filename.txt")
-#     # Do something with the file
-# except IOError:
-#     f = open("Success.txt","w")
-
-# finally:
-#     f.close()
-
-
-
-
-
-
-
-
-
-
-
-
-# try:
-#     f = open("filename.txt")
-#     # Do something with the file
-# except IOError:
-#     f = open("Success.txt","w")
-
-# finally:
-#     f.close()
