@@ -4,7 +4,7 @@ import os
 from PySide6.QtWidgets import QWidget, QPushButton, QApplication, QMainWindow
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
+    QSize, QTime, QTimer, QUrl, Qt)
 from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QCursor, QFont, QFontDatabase, QGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
@@ -46,8 +46,7 @@ class main_window(QWidget,Ui_MainWindow):
         self.actionAbrir_alertas_txt.triggered.connect(self.openfile_alertas)
         self.actionAbrir_db_txt.triggered.connect(self.openfile_db)
         self.actionEliminar_alertas_txt.triggered.connect(self.deleteFile_alertas)
-        self.actionEliminar_db_txt.triggered.connect(self.deleteFile_db)
-        
+        self.actionEliminar_db_txt.triggered.connect(self.deleteFile_db)        
     #Esta función elimina el hilo para volverlo a lanzar, y así liberar memoria
     
     def openfile_alertas(self):
@@ -90,6 +89,7 @@ class main_window(QWidget,Ui_MainWindow):
         print("inicia")
         self.bol = True
         self.stop_button.clicked.connect(self.Stop)
+
         while self.bol == True:
             self.PRODUCTtext.clear()
             self.PRICEtext.clear()
@@ -98,6 +98,7 @@ class main_window(QWidget,Ui_MainWindow):
             m = cp.CaptadorPrecios('alter_main_program/BD/url_tag.txt',self.Meterdatosenpantalla, self).getData()
             compara.ComparadorFinal(m,self.Meteralertasenpantalla, self).comparacion("alter_main_program/BD/db.txt")
             sleep(self.ValorTiempo)
+
         print("finaliza")
         self.stop_button.clicked.connect(self.Stop)
         self.sleep_button.clicked.connect(self.Definirtiempo)
@@ -114,6 +115,8 @@ class main_window(QWidget,Ui_MainWindow):
         self.ValorTiempo = self.spinBox.value()
         self.play_button.setDisabled(False)
         self.stop_button.setDisabled(False)
+    def cerramosprograma(self):
+        self.bol = False
 
 
 

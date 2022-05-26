@@ -8,6 +8,6 @@ if __name__=='__main__':
     
     window = main_window()
     window.show()
-    
-    
-    sys.exit(app.exec())
+    app.exec()
+    #window.cerramosprograma()
+    sys.exit()
