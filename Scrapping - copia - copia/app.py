@@ -20,7 +20,6 @@ if __name__=='__main__':
     widget.setFixedHeight(492)
     widget.setCurrentIndex(0)
     widget.show()
-    
     sys.exit(app.exec()) 
     
 
