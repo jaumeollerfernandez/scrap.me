@@ -64,10 +64,7 @@ class MainInterface(QWidget,MainWindowInterface):
 
     def deleteFile_db(self):
         os.remove("alter_main_program/BD/db.txt")
-        # fp = open("alter_main_program/BD/db.txt","w")
-        # fp.seek(0,0)
-        # fp.truncate()
-        # fp.close()
+      
 
     def deleteFile_urltag(self):
         fp = open("alter_main_program/BD/url_tag.txt","w")
@@ -78,7 +75,7 @@ class MainInterface(QWidget,MainWindowInterface):
     def Stop(self):
         self.bol = False
         while self.h1.is_alive():
-            print("esta vivo")
+            print("El Hilo esta Vivo")
             sleep(0.5)
         
         self.h1 = Thread(target=self.hilo_captador)
@@ -87,7 +84,7 @@ class MainInterface(QWidget,MainWindowInterface):
         self.stop_button.setDisabled(True)
 
     def hilo_captador(self):
-        print("inicia")
+        print("Inicio Hilo")
         self.bol = True
         self.stop_button.clicked.connect(self.Stop)
         while self.bol == True:
@@ -99,8 +96,8 @@ class MainInterface(QWidget,MainWindowInterface):
             cp.ComparadorFinal(m,self.user).comparacion()
             datos = cn.Conexion('comparador').lectura(self.user)
             self.Meterdatosenpantalla(datos)
-            sleep(2)
-        print("finaliza")
+            sleep(self.ValorTiempo)
+        print("Finaliza Hilo")
         self.stop_button.clicked.connect(self.Stop)
         self.sleep_button.clicked.connect(self.Definirtiempo)
 
@@ -119,4 +116,9 @@ class MainInterface(QWidget,MainWindowInterface):
         self.ValorTiempo = self.spinBox.value()
         self.play_button.setDisabled(False)
         self.stop_button.setDisabled(False)
+        
+    def cerrarbool(self):
+        self.bol = False
+
+    
 

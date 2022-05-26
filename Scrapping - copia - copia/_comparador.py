@@ -19,10 +19,10 @@ class ComparadorFinal():
         #Lo unico que hace este metodo es crear el archivo si no existe.
         try:
             #Si existe, lo abre por aquí.
-            ale = open(f"DB/{self.user}_alertas.txt")
+            ale = open(f"BD/{self.user}_alertas.txt")
         except IOError:
             #Si no existe, lo crea y lo escribe.
-            ale = open(f"DB/{self.user}_alertas.txt","w")
+            ale = open(f"BD/{self.user}_alertas.txt","w")
             print("Nuevo archivo de alertas creado")
         finally:
             ale.close()
@@ -42,9 +42,9 @@ class ComparadorFinal():
             if response[i][0] == int(self.preciosactuales[i][0]):
                 if response[i][3] > self.preciosactuales[i][3]:
                     con.Conexion("comparador").update(self.preciosactuales[i][3],self.preciosactuales[i][0],self.user)
-                    print('precio cambiado')
+                    print('El Precio del Producto ha cambiado')
                     time = str(datetime.datetime.now())
-                    with open (f"DB/{self.user}_alertas.txt","a") as f: 
+                    with open (f"BD/{self.user}_alertas.txt","a") as f: 
                         f.write("El precio de ")
                         f.write(response[i][2])
                         f.write(" es de ")

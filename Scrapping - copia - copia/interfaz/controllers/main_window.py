@@ -11,6 +11,7 @@ class MainWindowForm(QWidget,Mainwindow):
     def __init__(self,user,widget):
         super().__init__()
         self.setupUi(self)
+        
         self.widget = widget
         self.user=user
         self.lista=[]
