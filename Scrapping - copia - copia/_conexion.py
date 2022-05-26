@@ -79,7 +79,6 @@ class Conexion:
         self.cnx.commit() #confirmar la transacción
         self.cursor.close()
         self.cnx.close()
-
         
     def update(self,precio,id,user):
         sql = f"UPDATE {self.tabla} SET precio = '{precio}' where id = '{id}' and id_usuario = '{user}'"
