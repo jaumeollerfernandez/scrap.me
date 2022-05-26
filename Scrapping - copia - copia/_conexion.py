@@ -11,7 +11,7 @@ class Conexion:
         self.c = {
                 'user': 'root',
                 'password': '',
-                'port':'3306',
+                'port':'33021',
                 'host': '127.0.0.1',
                 'database': 'scrapping'
             }
