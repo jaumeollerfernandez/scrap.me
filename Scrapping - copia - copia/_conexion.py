@@ -142,8 +142,7 @@ class Conexion:
 
 
     def lectura_TAGS_relacion_User(self,user):
-        
-        
+    
         sql= f"SELECT tabla1.id,tabla1.id_usuario,tabla2.url,tabla3.tag1,tabla3.tag2,tabla3.tag3,tabla3.tag4,tabla3.tag5,tabla3.tag6 from url_tags tabla1 join productos tabla2 on tabla1.id_usuario = tabla2.id_usuario and tabla1.id = tabla2.id join tags tabla3 on tabla1.nombre_empresa = tabla3.nombre_empresa and tabla2.id_usuario='{user}' order by id" 
         
         self.cursor.execute(sql)

@@ -36,7 +36,7 @@ class MainWindowForm(QWidget,Mainwindow):
         url = self.input_url.text()
         self.lista.append(url)
         cn.Conexion('productos').escrituraProductos(self.lista)
-        cp.Captador('eloy').setTags(url)
+        cp.Captador(self.user).setTags(url)
         self.lista=[]
         self.url_list.clear()
         self.getProductos()
