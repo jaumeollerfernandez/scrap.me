@@ -16,7 +16,7 @@ class TratoFicheros:
             datos=fp.readline()
             if datos !='':
                 datos=datos.rstrip('\n')
-                dato = datos.split('*')
+                dato = datos.split(';')
                 lista.append(dato)
         fp.close()
         return lista
@@ -31,7 +31,7 @@ class TratoFicheros:
             while j < len(self.p2[i]):
                 fp.write(self.p2[i][j])
                 if j!=(len(self.p2[i])-1):
-                    fp.write('*')
+                    fp.write(';')
                 j+=1
             fp.write('\n')
             i+=1

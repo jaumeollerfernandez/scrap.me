@@ -1,1 +1,4 @@
-1*https://www.kyotoelectrodomesticos.com/radio-portatil-sony-icfp-37.html*span*class*regular-price*div*class*product-name
+1;https://www.kyotoelectrodomesticos.com/radio-portatil-sony-icfp-37.html;span;class;regular-price;div;class;product-name
+2;https://www.amazon.es/Nintendo-Switch-versi%C3%B3n-OLED-Blanca/dp/B098RJXBTY/?_encoding=UTF8&pd_rd_w=pr8en&pf_rd_p=48481e87-4e46-4fe0-9d03-4714afe44108&pf_rd_r=WPMRANY8TJT7GG06D3BQ&pd_rd_r=76dcb8a2-0168-4c67-a374-17b07a320570&pd_rd_wg=Ikd8X&ref_=pd_gw_crs_zg_bs_599382031amazon;span;class;a-offscreen;span;class;a-size-large product-title-word-break
+3;https://www.amazon.es/COSORI-Freidora-Caliente-Programas-Temporizador/dp/B0832WLDLC/ref=zg-bs_kitchen_1/258-9545753-7485613?pd_rd_w=t8T5I&content-id=amzn1.sym.df4a7d6e-6659-4be1-b846-9511e3aa3b39&pf_rd_p=df4a7d6e-6659-4be1-b846-9511e3aa3b39&pf_rd_r=2BFXPS6G8T0DHP8923KA&pd_rd_wg=khzYG&pd_rd_r=decf2425-89c6-41ff-ac50-04779c1fe1a6&pd_rd_i=B09XBLKDLH&psc=1amazon;span;class;a-offscreen;span;class;a-size-large product-title-word-break
+4;https://www.kyotoelectrodomesticos.com/ordenador-portatil-hp-15s-fq2055ns-i3-8-256-15-6.html;span;class;regular-price;div;class;product-name

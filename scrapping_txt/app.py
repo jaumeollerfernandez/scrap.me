@@ -9,5 +9,5 @@ if __name__=='__main__':
     window = main_window()
     window.show()
     app.exec()
-    #window.cerramosprograma()
+    window.cerramosprograma()
     sys.exit()

@@ -112,7 +112,7 @@ class Conexion:
         self.cnx.close()
     
     def escrituraProductos(self,array):
-    
+        id = array[0]
         id_usuario = array[1]
         url = array[2]
             #tabla = "comparador"
