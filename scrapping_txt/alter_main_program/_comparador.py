@@ -6,6 +6,7 @@
 from alter_main_program import _captadorDatosWeb as cp
 from alter_main_program import __TratoFicheros as tf
 from testeo import main_window
+import smtplib
 import datetime
 
 
