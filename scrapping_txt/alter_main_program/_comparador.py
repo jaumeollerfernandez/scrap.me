@@ -17,7 +17,7 @@ class ComparadorFinal():
         self.bol = False
         self.encontrado = ""
         self.noencontrado = "No ha habido cambios"
-        self.outstock = "Producto fuera de la web"
+        self.outstock = 0
     def FicheroAlertaExiste(self, fichero):
         #Lo unico que hace este metodo es crear el archivo si no existe.
         try:

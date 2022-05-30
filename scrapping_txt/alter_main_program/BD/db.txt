@@ -5,4 +5,4 @@
 5;Portátil Asus X513EA-BQ2191T;752.69;https://www.kyotoelectrodomesticos.com/portatil-asus-x513ea-bq2191t.html
 6;Portátil Asus L1500CDA-EJ0480R;480.35;https://www.kyotoelectrodomesticos.com/portatil-asus-l1500cda-ej0480r.html
 7;Portátil Asus F415EA-EK1258W;460.54;https://www.kyotoelectrodomesticos.com/portatil-asus-f415ea-ek1258w.html
-8;Portátil ASUS F515KA-BR039W;445.37;https://www.kyotoelectrodomesticos.com/portatil-asus-f515ka-br039w.html
+8;Portátil ASUS F515KA-BR039W;0;https://www.kyotoelectrodomesticos.com/portatil-asus-f515ka-br039w.html
